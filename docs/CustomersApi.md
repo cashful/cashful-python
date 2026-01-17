@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_customer_balance**
-> object get_customer_balance(id)
+> CustomerBalanceDto get_customer_balance(id)
 
 Get Customer's Cash Balance
 
@@ -109,6 +109,7 @@ Retrieves the real-time balance for a single customer's "cash balance" (the "wal
 
 ```python
 import cashful
+from cashful.models.customer_balance_dto import CustomerBalanceDto
 from cashful.rest import ApiException
 from pprint import pprint
 
@@ -154,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CustomerBalanceDto**](CustomerBalanceDto.md)
 
 ### Authorization
 
@@ -177,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_customer_payment_methods**
-> object list_customer_payment_methods(id, limit=limit, offset=offset)
+> ListCustomerPaymentMethodsResponseDto list_customer_payment_methods(id, limit=limit, offset=offset)
 
 List Customer's Payment Methods
 
@@ -189,6 +190,7 @@ Shows all saved payment methods (cards, etc.) for a single customer.
 
 ```python
 import cashful
+from cashful.models.list_customer_payment_methods_response_dto import ListCustomerPaymentMethodsResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
@@ -238,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**ListCustomerPaymentMethodsResponseDto**](ListCustomerPaymentMethodsResponseDto.md)
 
 ### Authorization
 
@@ -436,7 +438,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_customer**
-> object retrieve_customer(id)
+> CustomerResponseDto retrieve_customer(id)
 
 Retrieve Customer
 
@@ -448,6 +450,7 @@ Gets the details for a single customer.
 
 ```python
 import cashful
+from cashful.models.customer_response_dto import CustomerResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
@@ -493,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CustomerResponseDto**](CustomerResponseDto.md)
 
 ### Authorization
 
@@ -516,7 +519,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_customer**
-> object update_customer(id, update_customer_dto)
+> CustomerResponseDto update_customer(id, update_customer_dto)
 
 Update Customer
 
@@ -528,6 +531,7 @@ Updates a customer's details (e.g., email, metadata).
 
 ```python
 import cashful
+from cashful.models.customer_response_dto import CustomerResponseDto
 from cashful.models.update_customer_dto import UpdateCustomerDto
 from cashful.rest import ApiException
 from pprint import pprint
@@ -576,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CustomerResponseDto**](CustomerResponseDto.md)
 
 ### Authorization
 

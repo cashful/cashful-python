@@ -81,6 +81,8 @@ cashful/models/create_product_dto.py
 cashful/models/create_purchase_dto.py
 cashful/models/create_transfer_dto.py
 cashful/models/create_webhook_endpoint_dto.py
+cashful/models/customer_balance_dto.py
+cashful/models/customer_payment_method_dto.py
 cashful/models/customer_response_dto.py
 cashful/models/customer_stats_dto.py
 cashful/models/customer_transaction_dto.py
@@ -127,6 +129,7 @@ cashful/models/link_social_response_dto.py
 cashful/models/list_accounts_response_dto.py
 cashful/models/list_api_keys_response_dto.py
 cashful/models/list_checkout_sessions_response_dto.py
+cashful/models/list_customer_payment_methods_response_dto.py
 cashful/models/list_customer_transactions_response_dto.py
 cashful/models/list_customers_response_dto.py
 cashful/models/list_events_response_dto.py
@@ -284,6 +287,8 @@ docs/CreateProductDto.md
 docs/CreatePurchaseDto.md
 docs/CreateTransferDto.md
 docs/CreateWebhookEndpointDto.md
+docs/CustomerBalanceDto.md
+docs/CustomerPaymentMethodDto.md
 docs/CustomerResponseDto.md
 docs/CustomerStatsDto.md
 docs/CustomerTransactionDto.md
@@ -333,6 +338,7 @@ docs/LinkSocialResponseDto.md
 docs/ListAccountsResponseDto.md
 docs/ListApiKeysResponseDto.md
 docs/ListCheckoutSessionsResponseDto.md
+docs/ListCustomerPaymentMethodsResponseDto.md
 docs/ListCustomerTransactionsResponseDto.md
 docs/ListCustomersResponseDto.md
 docs/ListEventsResponseDto.md
@@ -505,6 +511,8 @@ test/test_create_product_dto.py
 test/test_create_purchase_dto.py
 test/test_create_transfer_dto.py
 test/test_create_webhook_endpoint_dto.py
+test/test_customer_balance_dto.py
+test/test_customer_payment_method_dto.py
 test/test_customer_response_dto.py
 test/test_customer_stats_dto.py
 test/test_customer_transaction_dto.py
@@ -554,6 +562,7 @@ test/test_link_social_response_dto.py
 test/test_list_accounts_response_dto.py
 test/test_list_api_keys_response_dto.py
 test/test_list_checkout_sessions_response_dto.py
+test/test_list_customer_payment_methods_response_dto.py
 test/test_list_customer_transactions_response_dto.py
 test/test_list_customers_response_dto.py
 test/test_list_events_response_dto.py

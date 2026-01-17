@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_product**
-> object update_product(id, update_product_dto)
+> ProductResponseDto update_product(id, update_product_dto)
 
 Update Product
 
@@ -274,6 +274,7 @@ Updates a product's name, description, or metadata.
 
 ```python
 import cashful
+from cashful.models.product_response_dto import ProductResponseDto
 from cashful.models.update_product_dto import UpdateProductDto
 from cashful.rest import ApiException
 from pprint import pprint
@@ -322,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**ProductResponseDto**](ProductResponseDto.md)
 
 ### Authorization
 
