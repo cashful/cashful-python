@@ -1,6 +1,6 @@
 # cashful.StorageApi
 
-All URIs are relative to *http://localhost:9000*
+All URIs are relative to *https://api.cashful.africa*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,10 +28,10 @@ from cashful.models.file_dto import FileDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -107,10 +107,10 @@ import cashful
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -185,10 +185,10 @@ from cashful.models.presigned_download_response_dto import PresignedDownloadResp
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -265,10 +265,10 @@ from cashful.models.list_files_response_dto import ListFilesResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -358,10 +358,10 @@ from cashful.models.request_upload_url_dto import RequestUploadUrlDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -438,10 +438,10 @@ from cashful.models.file_dto import FileDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters

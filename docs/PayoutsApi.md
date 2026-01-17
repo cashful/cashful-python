@@ -1,6 +1,6 @@
 # cashful.PayoutsApi
 
-All URIs are relative to *http://localhost:9000*
+All URIs are relative to *https://api.cashful.africa*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,10 +26,10 @@ from cashful.models.payout_response_dto import PayoutResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -108,10 +108,10 @@ from cashful.models.list_payouts_response_dto import ListPayoutsResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters

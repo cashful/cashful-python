@@ -1,6 +1,6 @@
 # cashful.NotificationsApi
 
-All URIs are relative to *http://localhost:9000*
+All URIs are relative to *https://api.cashful.africa*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,10 +25,10 @@ from cashful.models.send_email_dto import SendEmailDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 
@@ -93,10 +93,10 @@ from cashful.models.send_multi_channel_notification200_response import SendMulti
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 
@@ -155,10 +155,10 @@ from cashful.models.notification_dto import NotificationDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 
@@ -222,10 +222,10 @@ from cashful.models.send_sms_dto import SendSmsDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 

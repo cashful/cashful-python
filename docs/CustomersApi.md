@@ -1,6 +1,6 @@
 # cashful.CustomersApi
 
-All URIs are relative to *http://localhost:9000*
+All URIs are relative to *https://api.cashful.africa*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,10 +31,10 @@ from cashful.models.customer_response_dto import CustomerResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -112,10 +112,10 @@ import cashful
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -192,10 +192,10 @@ import cashful
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -277,10 +277,10 @@ from cashful.models.list_customer_transactions_response_dto import ListCustomerT
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -362,10 +362,10 @@ from cashful.models.list_customers_response_dto import ListCustomersResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -451,10 +451,10 @@ import cashful
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -532,10 +532,10 @@ from cashful.models.update_customer_dto import UpdateCustomerDto
 from cashful.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:9000
+# Defining the host is optional and defaults to https://api.cashful.africa
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cashful.Configuration(
-    host = "http://localhost:9000"
+    host = "https://api.cashful.africa"
 )
 
 # The client must configure the authentication and authorization parameters
