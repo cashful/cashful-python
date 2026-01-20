@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Cashful-Co/cashful-python"
+Repository = "https://github.com/cashful/cashful-python"
 
 [tool.poetry]
 requires-poetry = ">=2.0"

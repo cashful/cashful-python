@@ -19,9 +19,9 @@ Python 3.9+
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install git+https://github.com/Cashful-Co/cashful-python.git
+pip install git+https://github.com/cashful/cashful-python.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/Cashful-Co/cashful-python.git`)
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/cashful/cashful-python.git`)
 
 Then import the package:
 ```python

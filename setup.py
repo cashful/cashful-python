@@ -37,7 +37,7 @@ setup(
     description="Cashful API",
     author="Support",
     author_email="support@cashful.africa",
-    url="https://github.com/Cashful-Co/cashful-python",
+    url="https://github.com/cashful/cashful-python",
     keywords=["OpenAPI", "OpenAPI-Generator", "Cashful API"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
