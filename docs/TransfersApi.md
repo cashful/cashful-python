@@ -5,6 +5,7 @@ All URIs are relative to *https://api.cashful.africa*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_transfer**](TransfersApi.md#create_transfer) | **POST** /api/canary/transfers | Create P2P Transfer
+[**list_transfers**](TransfersApi.md#list_transfers) | **GET** /api/canary/transfers | List Transfers
 
 
 # **create_transfer**
@@ -87,6 +88,90 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **402** | Insufficient sender balance |  -  |
 **404** | Resource not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_transfers**
+> ListTransfersResponseDto list_transfers(merchant_id, limit=limit, offset=offset)
+
+List Transfers
+
+Lists transfers for a specific merchant with pagination.
+
+### Example
+
+* Bearer (JWT) Authentication (bearer):
+
+```python
+import cashful
+from cashful.models.list_transfers_response_dto import ListTransfersResponseDto
+from cashful.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.cashful.africa
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cashful.Configuration(
+    host = "https://api.cashful.africa"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearer
+configuration = cashful.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cashful.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cashful.TransfersApi(api_client)
+    merchant_id = 'merchant_id_example' # str | Filter by merchant ID
+    limit = 50 # float | Maximum number of items to return (optional)
+    offset = 0 # float | Number of items to skip (optional)
+
+    try:
+        # List Transfers
+        api_response = api_instance.list_transfers(merchant_id, limit=limit, offset=offset)
+        print("The response of TransfersApi->list_transfers:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransfersApi->list_transfers: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **str**| Filter by merchant ID | 
+ **limit** | **float**| Maximum number of items to return | [optional] 
+ **offset** | **float**| Number of items to skip | [optional] 
+
+### Return type
+
+[**ListTransfersResponseDto**](ListTransfersResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved transfers |  -  |
+**401** | Unauthorized |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

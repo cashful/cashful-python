@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_payment_intents**
-> list_payment_intents(merchant_id, limit=limit, offset=offset, status=status)
+> ListPaymentIntentsResponseDto list_payment_intents(merchant_id, limit=limit, offset=offset, status=status)
 
 List Payment Intents
 
@@ -272,6 +272,7 @@ Lists payment intents for a specific merchant with pagination and filtering.
 
 ```python
 import cashful
+from cashful.models.list_payment_intents_response_dto import ListPaymentIntentsResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
@@ -302,7 +303,9 @@ with cashful.ApiClient(configuration) as api_client:
 
     try:
         # List Payment Intents
-        api_instance.list_payment_intents(merchant_id, limit=limit, offset=offset, status=status)
+        api_response = api_instance.list_payment_intents(merchant_id, limit=limit, offset=offset, status=status)
+        print("The response of PaymentIntentsApi->list_payment_intents:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling PaymentIntentsApi->list_payment_intents: %s\n" % e)
 ```
@@ -321,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ListPaymentIntentsResponseDto**](ListPaymentIntentsResponseDto.md)
 
 ### Authorization
 
