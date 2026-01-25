@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_payment_methods**
-> ListPaymentMethodsResponseDto list_payment_methods(merchant_id, limit=limit, offset=offset, customer_id=customer_id)
+> ListPaymentMethodsResponseDto list_payment_methods(limit=limit, offset=offset, merchant_id=merchant_id, customer_id=customer_id)
 
 List Payment Methods
 
@@ -126,14 +126,14 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.PaymentMethodsApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The unique identifier of the merchant
     limit = 50 # float | Maximum number of records to return (optional)
     offset = 0 # float | Number of records to skip (optional)
+    merchant_id = 'merchant_id_example' # str | The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization. (optional)
     customer_id = 'customer_id_example' # str | The unique identifier of the customer (optional)
 
     try:
         # List Payment Methods
-        api_response = api_instance.list_payment_methods(merchant_id, limit=limit, offset=offset, customer_id=customer_id)
+        api_response = api_instance.list_payment_methods(limit=limit, offset=offset, merchant_id=merchant_id, customer_id=customer_id)
         print("The response of PaymentMethodsApi->list_payment_methods:\n")
         pprint(api_response)
     except Exception as e:
@@ -147,9 +147,9 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The unique identifier of the merchant | 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
+ **merchant_id** | **str**| The unique identifier of the merchant. If not provided, defaults to the authenticated user&#39;s active organization. | [optional] 
  **customer_id** | **str**| The unique identifier of the customer | [optional] 
 
 ### Return type

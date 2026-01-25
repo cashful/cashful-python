@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **tags** | **List[str]** | Tags for classification | [optional] 
 **related_entity_id** | **str** | Related entity ID (e.g., compliance info ID) | [optional] 
 **related_entity_type** | **str** | Related entity type | [optional] 
+**is_public** | **bool** | Whether the file should be publicly accessible | [optional] [default to False]
 
 ## Example
 

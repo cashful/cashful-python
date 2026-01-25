@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_balance_history**
-> BalanceHistoryResponseDto get_balance_history(merchant_id, limit=limit, offset=offset, start_date=start_date, end_date=end_date, transaction_type=transaction_type)
+> BalanceHistoryResponseDto get_balance_history(merchant_id=merchant_id, limit=limit, offset=offset, start_date=start_date, end_date=end_date, transaction_type=transaction_type)
 
 List Merchant Balance History
 
@@ -45,7 +45,7 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.BalanceApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant. This parameter is required.
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. (optional)
     limit = 3.4 # float | Maximum number of records to return (optional)
     offset = 3.4 # float | Number of records to skip (optional)
     start_date = 'start_date_example' # str | Filter transactions from this date (ISO 8601 format) (optional)
@@ -54,7 +54,7 @@ with cashful.ApiClient(configuration) as api_client:
 
     try:
         # List Merchant Balance History
-        api_response = api_instance.get_balance_history(merchant_id, limit=limit, offset=offset, start_date=start_date, end_date=end_date, transaction_type=transaction_type)
+        api_response = api_instance.get_balance_history(merchant_id=merchant_id, limit=limit, offset=offset, start_date=start_date, end_date=end_date, transaction_type=transaction_type)
         print("The response of BalanceApi->get_balance_history:\n")
         pprint(api_response)
     except Exception as e:
@@ -68,7 +68,7 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant. This parameter is required. | 
+ **merchant_id** | **str**| The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
  **start_date** | **str**| Filter transactions from this date (ISO 8601 format) | [optional] 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_merchant_balance**
-> MerchantBalanceResponseDto get_merchant_balance(merchant_id)
+> MerchantBalanceResponseDto get_merchant_balance(merchant_id=merchant_id)
 
 Get Merchant Balance
 
@@ -137,11 +137,11 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.BalanceApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant whose balance is being requested.
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. (optional)
 
     try:
         # Get Merchant Balance
-        api_response = api_instance.get_merchant_balance(merchant_id)
+        api_response = api_instance.get_merchant_balance(merchant_id=merchant_id)
         print("The response of BalanceApi->get_merchant_balance:\n")
         pprint(api_response)
     except Exception as e:
@@ -155,7 +155,7 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant whose balance is being requested. | 
+ **merchant_id** | **str**| The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
 
 ### Return type
 

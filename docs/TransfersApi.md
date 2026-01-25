@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_transfers**
-> ListTransfersResponseDto list_transfers(merchant_id, limit=limit, offset=offset)
+> ListTransfersResponseDto list_transfers(limit=limit, offset=offset, merchant_id=merchant_id)
 
 List Transfers
 
@@ -129,13 +129,13 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.TransfersApi(api_client)
-    merchant_id = 'merchant_id_example' # str | Filter by merchant ID
     limit = 50 # float | Maximum number of items to return (optional)
     offset = 0 # float | Number of items to skip (optional)
+    merchant_id = 'merchant_id_example' # str | Filter by merchant ID. If omitted, defaults to the authenticated merchant. (optional)
 
     try:
         # List Transfers
-        api_response = api_instance.list_transfers(merchant_id, limit=limit, offset=offset)
+        api_response = api_instance.list_transfers(limit=limit, offset=offset, merchant_id=merchant_id)
         print("The response of TransfersApi->list_transfers:\n")
         pprint(api_response)
     except Exception as e:
@@ -149,9 +149,9 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| Filter by merchant ID | 
  **limit** | **float**| Maximum number of items to return | [optional] 
  **offset** | **float**| Number of items to skip | [optional] 
+ **merchant_id** | **str**| Filter by merchant ID. If omitted, defaults to the authenticated merchant. | [optional] 
 
 ### Return type
 

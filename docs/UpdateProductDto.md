@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** | A description of the product | [optional] 
 **amount** | **float** | The price of the product in the smallest currency unit | [optional] 
 **active** | **bool** | Whether the product is active | [optional] 
+**image_id** | **str** | The ID of the product image file | [optional] 
 **metadata** | **Dict[str, object]** | Optional custom metadata | 
 
 ## Example

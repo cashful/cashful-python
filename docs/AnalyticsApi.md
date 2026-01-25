@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_analytics**
-> AnalyticsResponseDto get_analytics(merchant_id)
+> AnalyticsResponseDto get_analytics(merchant_id=merchant_id)
 
 Get Analytics
 
@@ -45,11 +45,11 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.AnalyticsApi(api_client)
-    merchant_id = 'merchant_123' # str | The unique identifier of the merchant
+    merchant_id = 'merchant_123' # str | The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization. (optional)
 
     try:
         # Get Analytics
-        api_response = api_instance.get_analytics(merchant_id)
+        api_response = api_instance.get_analytics(merchant_id=merchant_id)
         print("The response of AnalyticsApi->get_analytics:\n")
         pprint(api_response)
     except Exception as e:
@@ -63,7 +63,7 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The unique identifier of the merchant | 
+ **merchant_id** | **str**| The unique identifier of the merchant. If not provided, defaults to the authenticated user&#39;s active organization. | [optional] 
 
 ### Return type
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_analytics_summary**
-> AnalyticsSummaryDto get_analytics_summary(merchant_id)
+> AnalyticsSummaryDto get_analytics_summary(merchant_id=merchant_id)
 
 Get Analytics Summary
 
@@ -126,11 +126,11 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.AnalyticsApi(api_client)
-    merchant_id = 'merchant_123' # str | The unique identifier of the merchant
+    merchant_id = 'merchant_123' # str | The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization. (optional)
 
     try:
         # Get Analytics Summary
-        api_response = api_instance.get_analytics_summary(merchant_id)
+        api_response = api_instance.get_analytics_summary(merchant_id=merchant_id)
         print("The response of AnalyticsApi->get_analytics_summary:\n")
         pprint(api_response)
     except Exception as e:
@@ -144,7 +144,7 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The unique identifier of the merchant | 
+ **merchant_id** | **str**| The unique identifier of the merchant. If not provided, defaults to the authenticated user&#39;s active organization. | [optional] 
 
 ### Return type
 

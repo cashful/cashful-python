@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_products**
-> ListProductsResponseDto list_products(merchant_id, limit=limit, offset=offset, active=active)
+> ListProductsResponseDto list_products(limit=limit, offset=offset, merchant_id=merchant_id, active=active)
 
 List Products
 
@@ -129,14 +129,14 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.ProductsApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant. This parameter is required.
     limit = 50 # float | Maximum number of records to return (optional)
     offset = 0 # float | Number of records to skip (optional)
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant whose products are being requested. If not provided, the products of the authenticated merchant will be returned. (optional)
     active = True # bool | Filter by active status (optional)
 
     try:
         # List Products
-        api_response = api_instance.list_products(merchant_id, limit=limit, offset=offset, active=active)
+        api_response = api_instance.list_products(limit=limit, offset=offset, merchant_id=merchant_id, active=active)
         print("The response of ProductsApi->list_products:\n")
         pprint(api_response)
     except Exception as e:
@@ -150,9 +150,9 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant. This parameter is required. | 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
+ **merchant_id** | **str**| The ID of the merchant whose products are being requested. If not provided, the products of the authenticated merchant will be returned. | [optional] 
  **active** | **bool**| Filter by active status | [optional] 
 
 ### Return type

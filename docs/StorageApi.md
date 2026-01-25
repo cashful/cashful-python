@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **storage_controller_list_canary**
-> ListFilesResponseDto storage_controller_list_canary(merchant_id, limit=limit, offset=offset, tag=tag, status=status, related_entity_id=related_entity_id, related_entity_type=related_entity_type)
+> ListFilesResponseDto storage_controller_list_canary(limit=limit, offset=offset, tag=tag, status=status, related_entity_id=related_entity_id, related_entity_type=related_entity_type)
 
 List files
 
@@ -285,7 +285,6 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.StorageApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant. This parameter is required.
     limit = 50 # float | Maximum number of records to return (optional)
     offset = 0 # float | Number of records to skip (optional)
     tag = 'tag_example' # str | Filter by tag (optional)
@@ -295,7 +294,7 @@ with cashful.ApiClient(configuration) as api_client:
 
     try:
         # List files
-        api_response = api_instance.storage_controller_list_canary(merchant_id, limit=limit, offset=offset, tag=tag, status=status, related_entity_id=related_entity_id, related_entity_type=related_entity_type)
+        api_response = api_instance.storage_controller_list_canary(limit=limit, offset=offset, tag=tag, status=status, related_entity_id=related_entity_id, related_entity_type=related_entity_type)
         print("The response of StorageApi->storage_controller_list_canary:\n")
         pprint(api_response)
     except Exception as e:
@@ -309,7 +308,6 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant. This parameter is required. | 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
  **tag** | **str**| Filter by tag | [optional] 
@@ -378,7 +376,7 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.StorageApi(api_client)
-    request_upload_url_dto = {"filename":"identity-document.pdf","mimeType":"application/pdf","tags":["compliance","identity-document"],"relatedEntityId":"compliance_info_123","relatedEntityType":"complianceInfo"} # RequestUploadUrlDto | 
+    request_upload_url_dto = {"filename":"iphone-15.png","mimeType":"image/png","isPublic":true,"tags":["product","image"],"relatedEntityId":"product_123","relatedEntityType":"product"} # RequestUploadUrlDto | 
 
     try:
         # Request a presigned URL for file upload

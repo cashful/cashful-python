@@ -20,6 +20,8 @@ Method | HTTP request | Description
 [**get_active_member_role**](AuthenticationApi.md#get_active_member_role) | **GET** /api/canary/authentication/organization/get-active-member-role | Get Active Member Role
 [**get_api_key**](AuthenticationApi.md#get_api_key) | **GET** /api/canary/authentication/api-key/get | Get API Key
 [**get_invitation**](AuthenticationApi.md#get_invitation) | **GET** /api/canary/authentication/organization/get-invitation | Get Invitation
+[**get_json_web_key_set**](AuthenticationApi.md#get_json_web_key_set) | **GET** /api/canary/authentication/jwks | Get the JSON Web Key Set
+[**get_json_web_token**](AuthenticationApi.md#get_json_web_token) | **GET** /api/canary/authentication/token | Get a JWT token
 [**get_organization**](AuthenticationApi.md#get_organization) | **GET** /api/canary/authentication/organization/get-full-organization | Get Full Organization
 [**get_session**](AuthenticationApi.md#get_session) | **GET** /api/canary/authentication/get-session | Get Session
 [**has_permission**](AuthenticationApi.md#has_permission) | **POST** /api/canary/authentication/organization/has-permission | Has Permission
@@ -1353,6 +1355,158 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Invitation retrieved successfully |  -  |
+**401** | Unauthorized |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_json_web_key_set**
+> GetJsonWebKeySetResponseDto get_json_web_key_set()
+
+Get the JSON Web Key Set
+
+Get the JSON Web Key Set
+
+### Example
+
+* Bearer (JWT) Authentication (bearer):
+
+```python
+import cashful
+from cashful.models.get_json_web_key_set_response_dto import GetJsonWebKeySetResponseDto
+from cashful.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.cashful.africa
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cashful.Configuration(
+    host = "https://api.cashful.africa"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearer
+configuration = cashful.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cashful.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cashful.AuthenticationApi(api_client)
+
+    try:
+        # Get the JSON Web Key Set
+        api_response = api_instance.get_json_web_key_set()
+        print("The response of AuthenticationApi->get_json_web_key_set:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticationApi->get_json_web_key_set: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetJsonWebKeySetResponseDto**](GetJsonWebKeySetResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | JSON Web Key Set retrieved successfully |  -  |
+**401** | Unauthorized |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_json_web_token**
+> GetJsonWebTokenResponseDto get_json_web_token()
+
+Get a JWT token
+
+Get a JWT token
+
+### Example
+
+* Bearer (JWT) Authentication (bearer):
+
+```python
+import cashful
+from cashful.models.get_json_web_token_response_dto import GetJsonWebTokenResponseDto
+from cashful.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.cashful.africa
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cashful.Configuration(
+    host = "https://api.cashful.africa"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearer
+configuration = cashful.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cashful.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cashful.AuthenticationApi(api_client)
+
+    try:
+        # Get a JWT token
+        api_response = api_instance.get_json_web_token()
+        print("The response of AuthenticationApi->get_json_web_token:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AuthenticationApi->get_json_web_token: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetJsonWebTokenResponseDto**](GetJsonWebTokenResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 **401** | Unauthorized |  -  |
 **500** | Internal server error |  -  |
 

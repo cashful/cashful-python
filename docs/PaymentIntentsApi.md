@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_payment_intents**
-> ListPaymentIntentsResponseDto list_payment_intents(merchant_id, limit=limit, offset=offset, status=status)
+> ListPaymentIntentsResponseDto list_payment_intents(merchant_id=merchant_id, limit=limit, offset=offset, status=status)
 
 List Payment Intents
 
@@ -296,14 +296,14 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.PaymentIntentsApi(api_client)
-    merchant_id = 'merchant_id_example' # str | Filter by merchant ID
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant. If omitted, defaults to the authenticated merchant. (optional)
     limit = 50 # float | Maximum number of records to return (optional) (default to 50)
     offset = 0 # float | Number of records to skip (optional) (default to 0)
     status = 'status_example' # str | Filter by status (optional)
 
     try:
         # List Payment Intents
-        api_response = api_instance.list_payment_intents(merchant_id, limit=limit, offset=offset, status=status)
+        api_response = api_instance.list_payment_intents(merchant_id=merchant_id, limit=limit, offset=offset, status=status)
         print("The response of PaymentIntentsApi->list_payment_intents:\n")
         pprint(api_response)
     except Exception as e:
@@ -317,7 +317,7 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| Filter by merchant ID | 
+ **merchant_id** | **str**| The ID of the merchant. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **float**| Maximum number of records to return | [optional] [default to 50]
  **offset** | **float**| Number of records to skip | [optional] [default to 0]
  **status** | **str**| Filter by status | [optional] 

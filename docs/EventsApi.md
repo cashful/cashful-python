@@ -44,7 +44,7 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.EventsApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant. This parameter is required.
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant whose events are being requested. This parameter is required.
     limit = 50 # float | Maximum number of records to return (optional)
     offset = 0 # float | Number of records to skip (optional)
     type = 'type_example' # str | Filter by event type (optional)
@@ -68,7 +68,7 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant. This parameter is required. | 
+ **merchant_id** | **str**| The ID of the merchant whose events are being requested. This parameter is required. | 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
  **type** | **str**| Filter by event type | [optional] 

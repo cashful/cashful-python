@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **amount** | **float** |  | [optional] 
 **currency** | **str** |  | 
 **active** | **bool** |  | 
+**image_id** | **str** | The ID of the product image file | [optional] 
+**image_url** | **str** | The public URL of the product image | [optional] 
 **metadata** | **Dict[str, object]** |  | 
 
 ## Example

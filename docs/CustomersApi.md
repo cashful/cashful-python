@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_customers**
-> ListCustomersResponseDto list_customers(merchant_id, limit=limit, offset=offset, email=email, search=search)
+> ListCustomersResponseDto list_customers(merchant_id=merchant_id, limit=limit, offset=offset, email=email, search=search)
 
 List Customers
 
@@ -384,7 +384,7 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.CustomersApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant. This parameter is required.
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. (optional)
     limit = 3.4 # float | Maximum number of records to return (optional)
     offset = 3.4 # float | Number of records to skip (optional)
     email = 'email_example' # str | Filter by email address (optional)
@@ -392,7 +392,7 @@ with cashful.ApiClient(configuration) as api_client:
 
     try:
         # List Customers
-        api_response = api_instance.list_customers(merchant_id, limit=limit, offset=offset, email=email, search=search)
+        api_response = api_instance.list_customers(merchant_id=merchant_id, limit=limit, offset=offset, email=email, search=search)
         print("The response of CustomersApi->list_customers:\n")
         pprint(api_response)
     except Exception as e:
@@ -406,7 +406,7 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant. This parameter is required. | 
+ **merchant_id** | **str**| The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
  **email** | **str**| Filter by email address | [optional] 

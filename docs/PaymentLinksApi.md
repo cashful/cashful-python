@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_payment_links**
-> ListPaymentLinksResponseDto list_payment_links(merchant_id, limit=limit, offset=offset, active=active)
+> ListPaymentLinksResponseDto list_payment_links(merchant_id=merchant_id, limit=limit, offset=offset, active=active)
 
 List Payment Links
 
@@ -129,14 +129,14 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.PaymentLinksApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant. This parameter is required.
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant whose payment links are being requested. If omitted, defaults to the authenticated merchant. (optional)
     limit = 3.4 # float | Maximum number of records to return (optional)
     offset = 3.4 # float | Number of records to skip (optional)
     active = True # bool | Filter by active status (optional)
 
     try:
         # List Payment Links
-        api_response = api_instance.list_payment_links(merchant_id, limit=limit, offset=offset, active=active)
+        api_response = api_instance.list_payment_links(merchant_id=merchant_id, limit=limit, offset=offset, active=active)
         print("The response of PaymentLinksApi->list_payment_links:\n")
         pprint(api_response)
     except Exception as e:
@@ -150,7 +150,7 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant. This parameter is required. | 
+ **merchant_id** | **str**| The ID of the merchant whose payment links are being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
  **active** | **bool**| Filter by active status | [optional] 

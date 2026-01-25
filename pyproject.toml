@@ -1,6 +1,6 @@
 [project]
 name = "cashful"
-version = "0.6.3"
+version = "0.7.0"
 description = "Cashful API"
 authors = [
   {name = "Support",email = "support@cashful.africa"},
