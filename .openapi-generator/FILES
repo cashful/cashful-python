@@ -50,6 +50,7 @@ cashful/models/admin_update_user_response_dto.py
 cashful/models/analytics_response_dto.py
 cashful/models/analytics_summary_dto.py
 cashful/models/api_key.py
+cashful/models/bad_request_response_dto.py
 cashful/models/balance_history_response_dto.py
 cashful/models/balance_transaction_dto.py
 cashful/models/ban_user_dto.py
@@ -94,10 +95,10 @@ cashful/models/delete_organization_dto.py
 cashful/models/delete_organization_response_dto.py
 cashful/models/delete_user_dto.py
 cashful/models/delete_user_response_dto.py
-cashful/models/error_response_dto.py
 cashful/models/event_response_dto.py
 cashful/models/evervault_encrypted_card_dto.py
 cashful/models/file_dto.py
+cashful/models/forbidden_response_dto.py
 cashful/models/forgot_password_dto.py
 cashful/models/forgot_password_response_dto.py
 cashful/models/get_access_token_dto.py
@@ -112,11 +113,13 @@ cashful/models/get_json_web_token_response_dto.py
 cashful/models/get_session_response_dto.py
 cashful/models/has_permission_dto.py
 cashful/models/has_permission_response_dto.py
+cashful/models/hosted_checkout_config_dto.py
 cashful/models/i_veri_health_check_response_dto.py
 cashful/models/impersonate_user_dto.py
 cashful/models/impersonate_user_response_dto.py
 cashful/models/initiate_payment_dto.py
 cashful/models/initiate_payment_response_dto.py
+cashful/models/internal_server_error_response_dto.py
 cashful/models/invitation_dto.py
 cashful/models/invite_member_dto.py
 cashful/models/invite_member_response_dto.py
@@ -153,6 +156,7 @@ cashful/models/list_webhook_endpoints_response_dto.py
 cashful/models/member_dto.py
 cashful/models/merchant_balance_response_dto.py
 cashful/models/metric_stats_dto.py
+cashful/models/not_found_response_dto.py
 cashful/models/notification_dto.py
 cashful/models/organization_compliance_response_dto.py
 cashful/models/organization_dto.py
@@ -181,6 +185,7 @@ cashful/models/reset_password_dto.py
 cashful/models/reset_password_response_dto.py
 cashful/models/reset_phone_password_dto.py
 cashful/models/reset_phone_password_response_dto.py
+cashful/models/retrieve_multiple_products_dto.py
 cashful/models/revoke_session_dto.py
 cashful/models/revoke_session_response_dto.py
 cashful/models/send_email200_response.py
@@ -208,6 +213,7 @@ cashful/models/social_sign_in_dto.py
 cashful/models/stop_impersonating_response_dto.py
 cashful/models/timeframe_metrics_dto.py
 cashful/models/transfer_response_dto.py
+cashful/models/unauthorized_response_dto.py
 cashful/models/unban_user_dto.py
 cashful/models/unban_user_response_dto.py
 cashful/models/unlink_account_dto.py
@@ -215,6 +221,8 @@ cashful/models/unlink_account_response_dto.py
 cashful/models/update_api_key_dto.py
 cashful/models/update_api_key_response_dto.py
 cashful/models/update_balance_dto.py
+cashful/models/update_checkout_session_dto.py
+cashful/models/update_checkout_session_response_dto.py
 cashful/models/update_customer_dto.py
 cashful/models/update_member_role_dto.py
 cashful/models/update_member_role_response_dto.py
@@ -258,6 +266,7 @@ docs/AnalyticsResponseDto.md
 docs/AnalyticsSummaryDto.md
 docs/ApiKey.md
 docs/AuthenticationApi.md
+docs/BadRequestResponseDto.md
 docs/BalanceApi.md
 docs/BalanceHistoryResponseDto.md
 docs/BalanceTransactionDto.md
@@ -306,11 +315,11 @@ docs/DeleteOrganizationDto.md
 docs/DeleteOrganizationResponseDto.md
 docs/DeleteUserDto.md
 docs/DeleteUserResponseDto.md
-docs/ErrorResponseDto.md
 docs/EventResponseDto.md
 docs/EventsApi.md
 docs/EvervaultEncryptedCardDto.md
 docs/FileDto.md
+docs/ForbiddenResponseDto.md
 docs/ForgotPasswordDto.md
 docs/ForgotPasswordResponseDto.md
 docs/GetAccessTokenDto.md
@@ -326,11 +335,13 @@ docs/GetSessionResponseDto.md
 docs/HasPermissionDto.md
 docs/HasPermissionResponseDto.md
 docs/HealthApi.md
+docs/HostedCheckoutConfigDto.md
 docs/IVeriHealthCheckResponseDto.md
 docs/ImpersonateUserDto.md
 docs/ImpersonateUserResponseDto.md
 docs/InitiatePaymentDto.md
 docs/InitiatePaymentResponseDto.md
+docs/InternalServerErrorResponseDto.md
 docs/InvitationDto.md
 docs/InviteMemberDto.md
 docs/InviteMemberResponseDto.md
@@ -367,6 +378,7 @@ docs/ListWebhookEndpointsResponseDto.md
 docs/MemberDto.md
 docs/MerchantBalanceResponseDto.md
 docs/MetricStatsDto.md
+docs/NotFoundResponseDto.md
 docs/NotificationDto.md
 docs/NotificationsApi.md
 docs/OrganizationComplianceResponseDto.md
@@ -402,6 +414,7 @@ docs/ResetPasswordDto.md
 docs/ResetPasswordResponseDto.md
 docs/ResetPhonePasswordDto.md
 docs/ResetPhonePasswordResponseDto.md
+docs/RetrieveMultipleProductsDto.md
 docs/RevokeSessionDto.md
 docs/RevokeSessionResponseDto.md
 docs/SendEmail200Response.md
@@ -431,6 +444,7 @@ docs/StorageApi.md
 docs/TimeframeMetricsDto.md
 docs/TransferResponseDto.md
 docs/TransfersApi.md
+docs/UnauthorizedResponseDto.md
 docs/UnbanUserDto.md
 docs/UnbanUserResponseDto.md
 docs/UnlinkAccountDto.md
@@ -438,6 +452,8 @@ docs/UnlinkAccountResponseDto.md
 docs/UpdateApiKeyDto.md
 docs/UpdateApiKeyResponseDto.md
 docs/UpdateBalanceDto.md
+docs/UpdateCheckoutSessionDto.md
+docs/UpdateCheckoutSessionResponseDto.md
 docs/UpdateCustomerDto.md
 docs/UpdateMemberRoleDto.md
 docs/UpdateMemberRoleResponseDto.md
@@ -487,6 +503,7 @@ test/test_analytics_response_dto.py
 test/test_analytics_summary_dto.py
 test/test_api_key.py
 test/test_authentication_api.py
+test/test_bad_request_response_dto.py
 test/test_balance_api.py
 test/test_balance_history_response_dto.py
 test/test_balance_transaction_dto.py
@@ -535,11 +552,11 @@ test/test_delete_organization_dto.py
 test/test_delete_organization_response_dto.py
 test/test_delete_user_dto.py
 test/test_delete_user_response_dto.py
-test/test_error_response_dto.py
 test/test_event_response_dto.py
 test/test_events_api.py
 test/test_evervault_encrypted_card_dto.py
 test/test_file_dto.py
+test/test_forbidden_response_dto.py
 test/test_forgot_password_dto.py
 test/test_forgot_password_response_dto.py
 test/test_get_access_token_dto.py
@@ -555,11 +572,13 @@ test/test_get_session_response_dto.py
 test/test_has_permission_dto.py
 test/test_has_permission_response_dto.py
 test/test_health_api.py
+test/test_hosted_checkout_config_dto.py
 test/test_i_veri_health_check_response_dto.py
 test/test_impersonate_user_dto.py
 test/test_impersonate_user_response_dto.py
 test/test_initiate_payment_dto.py
 test/test_initiate_payment_response_dto.py
+test/test_internal_server_error_response_dto.py
 test/test_invitation_dto.py
 test/test_invite_member_dto.py
 test/test_invite_member_response_dto.py
@@ -596,6 +615,7 @@ test/test_list_webhook_endpoints_response_dto.py
 test/test_member_dto.py
 test/test_merchant_balance_response_dto.py
 test/test_metric_stats_dto.py
+test/test_not_found_response_dto.py
 test/test_notification_dto.py
 test/test_notifications_api.py
 test/test_organization_compliance_response_dto.py
@@ -631,6 +651,7 @@ test/test_reset_password_dto.py
 test/test_reset_password_response_dto.py
 test/test_reset_phone_password_dto.py
 test/test_reset_phone_password_response_dto.py
+test/test_retrieve_multiple_products_dto.py
 test/test_revoke_session_dto.py
 test/test_revoke_session_response_dto.py
 test/test_send_email200_response.py
@@ -660,6 +681,7 @@ test/test_storage_api.py
 test/test_timeframe_metrics_dto.py
 test/test_transfer_response_dto.py
 test/test_transfers_api.py
+test/test_unauthorized_response_dto.py
 test/test_unban_user_dto.py
 test/test_unban_user_response_dto.py
 test/test_unlink_account_dto.py
@@ -667,6 +689,8 @@ test/test_unlink_account_response_dto.py
 test/test_update_api_key_dto.py
 test/test_update_api_key_response_dto.py
 test/test_update_balance_dto.py
+test/test_update_checkout_session_dto.py
+test/test_update_checkout_session_response_dto.py
 test/test_update_customer_dto.py
 test/test_update_member_role_dto.py
 test/test_update_member_role_response_dto.py

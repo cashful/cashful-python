@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** | The name of the line item | [optional] 
 **product_id** | **str** | The unique identifier of the product | [optional] 
 **quantity** | **float** | The quantity of the product | [optional] 
 **amount** | **float** | The amount for this line item in the smallest currency unit | 

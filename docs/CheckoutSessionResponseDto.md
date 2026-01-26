@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | 
 **expires_at** | **datetime** |  | [optional] 
 **metadata** | **Dict[str, object]** |  | 
+**hosted_checkout_config** | [**HostedCheckoutConfigDto**](HostedCheckoutConfigDto.md) | Configuration for the hosted checkout page | [optional] 
 
 ## Example
 

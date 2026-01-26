@@ -5,11 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** | The name of the payment link | [optional] 
+**description** | **str** | A description of the payment link | [optional] 
 **active** | **bool** | Whether the payment link is active | [optional] 
-**amount** | **float** |  | [optional] 
+**total_amount** | **float** |  | [optional] 
 **success_url** | **str** | The URL to redirect to on successful payment | [optional] 
 **cancel_url** | **str** | The URL to redirect to if customer cancels | [optional] 
 **metadata** | **Dict[str, object]** | Optional custom metadata | 
+**hosted_checkout_config** | [**HostedCheckoutConfigDto**](HostedCheckoutConfigDto.md) | Configuration for the hosted checkout page | [optional] 
 
 ## Example
 

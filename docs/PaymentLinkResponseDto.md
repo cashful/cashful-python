@@ -6,17 +6,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
+**name** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
 **merchant_id** | **str** |  | 
 **url** | **str** |  | 
-**product_id** | **str** |  | [optional] 
+**line_items** | [**List[LineItemDto]**](LineItemDto.md) |  | [optional] 
 **customer_id** | **str** |  | [optional] 
-**amount** | **float** |  | [optional] 
+**total_amount** | **float** |  | 
 **currency** | **str** |  | 
 **mode** | **str** |  | 
 **active** | **bool** |  | 
 **success_url** | **str** |  | 
 **cancel_url** | **str** |  | 
 **metadata** | **Dict[str, object]** |  | 
+**hosted_checkout_config** | [**HostedCheckoutConfigDto**](HostedCheckoutConfigDto.md) | Configuration for the hosted checkout page | [optional] 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 **deleted_at** | **datetime** |  | [optional] 

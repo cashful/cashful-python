@@ -8,13 +8,15 @@ Name | Type | Description | Notes
 **merchant_id** | **str** | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
 **customer_id** | **str** | The unique identifier of the customer | [optional] 
 **product_id** | **str** | The unique identifier of the product | [optional] 
-**success_url** | **str** | The URL to redirect to on successful payment | 
-**cancel_url** | **str** | The URL to redirect to if customer cancels | 
+**success_url** | **str** | The URL to redirect to on successful payment | [optional] 
+**failure_url** | **str** | The URL to redirect to on failure | [optional] 
+**cancel_url** | **str** | The URL to redirect to on cancel | [optional] 
 **line_items** | [**List[LineItemDto]**](LineItemDto.md) | Array of line items for the checkout | [optional] 
 **total_amount** | **float** | The total amount in the smallest currency unit | [optional] 
 **currency** | **str** | The three-letter ISO 4217 currency code | 
 **mode** | **str** | The checkout mode (e.g., &#39;payment&#39;) | [optional] 
 **metadata** | **Dict[str, object]** | Optional custom metadata | 
+**hosted_checkout_config** | [**HostedCheckoutConfigDto**](HostedCheckoutConfigDto.md) | Configuration for the hosted checkout page | [optional] 
 
 ## Example
 
