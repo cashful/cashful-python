@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pan** | **str** | Encrypted Primary Account Number (PAN) | 
+**p_an** | **str** | Encrypted Primary Account Number (PAN) | 
 **expiry_date** | **str** | Encrypted card expiry date | 
 **card_security_code** | **str** | Encrypted card security code (CVV) | 
 **cardholder_name** | **str** | Encrypted cardholder name | [optional] 

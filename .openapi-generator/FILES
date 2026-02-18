@@ -64,7 +64,11 @@ cashful/models/change_password_dto.py
 cashful/models/change_password_response_dto.py
 cashful/models/check_slug_dto.py
 cashful/models/check_slug_response_dto.py
+cashful/models/checkout_session_confirm_response_dto.py
 cashful/models/checkout_session_response_dto.py
+cashful/models/confirm_checkout_session_dto.py
+cashful/models/confirm_payment_intent_dto.py
+cashful/models/confirm_payment_intent_response_dto.py
 cashful/models/confirm_upload_dto.py
 cashful/models/create_api_key_dto.py
 cashful/models/create_api_key_response_dto.py
@@ -88,7 +92,6 @@ cashful/models/customer_response_dto.py
 cashful/models/customer_stats_dto.py
 cashful/models/customer_transaction_dto.py
 cashful/models/daily_breakdown_dto.py
-cashful/models/debit_return_response_dto.py
 cashful/models/delete_api_key_dto.py
 cashful/models/delete_api_key_response_dto.py
 cashful/models/delete_organization_dto.py
@@ -281,9 +284,13 @@ docs/ChangePasswordDto.md
 docs/ChangePasswordResponseDto.md
 docs/CheckSlugDto.md
 docs/CheckSlugResponseDto.md
+docs/CheckoutSessionConfirmResponseDto.md
 docs/CheckoutSessionResponseDto.md
 docs/CheckoutsApi.md
 docs/ComplianceApi.md
+docs/ConfirmCheckoutSessionDto.md
+docs/ConfirmPaymentIntentDto.md
+docs/ConfirmPaymentIntentResponseDto.md
 docs/ConfirmUploadDto.md
 docs/CreateApiKeyDto.md
 docs/CreateApiKeyResponseDto.md
@@ -308,7 +315,6 @@ docs/CustomerStatsDto.md
 docs/CustomerTransactionDto.md
 docs/CustomersApi.md
 docs/DailyBreakdownDto.md
-docs/DebitReturnResponseDto.md
 docs/DeleteApiKeyDto.md
 docs/DeleteApiKeyResponseDto.md
 docs/DeleteOrganizationDto.md
@@ -518,9 +524,13 @@ test/test_change_password_dto.py
 test/test_change_password_response_dto.py
 test/test_check_slug_dto.py
 test/test_check_slug_response_dto.py
+test/test_checkout_session_confirm_response_dto.py
 test/test_checkout_session_response_dto.py
 test/test_checkouts_api.py
 test/test_compliance_api.py
+test/test_confirm_checkout_session_dto.py
+test/test_confirm_payment_intent_dto.py
+test/test_confirm_payment_intent_response_dto.py
 test/test_confirm_upload_dto.py
 test/test_create_api_key_dto.py
 test/test_create_api_key_response_dto.py
@@ -545,7 +555,6 @@ test/test_customer_stats_dto.py
 test/test_customer_transaction_dto.py
 test/test_customers_api.py
 test/test_daily_breakdown_dto.py
-test/test_debit_return_response_dto.py
 test/test_delete_api_key_dto.py
 test/test_delete_api_key_response_dto.py
 test/test_delete_organization_dto.py

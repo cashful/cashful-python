@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | 
 **deleted_at** | **datetime** |  | [optional] 
 **merchant_id** | **str** |  | 
+**payment_intent_id** | **str** |  | [optional] 
 **customer_id** | **str** |  | [optional] 
 **session_url** | **str** |  | 
 **success_url** | **str** |  | 

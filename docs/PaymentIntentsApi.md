@@ -94,11 +94,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **confirm_payment_intent**
-> PaymentIntentResponseDto confirm_payment_intent(id)
+> ConfirmPaymentIntentResponseDto confirm_payment_intent(id, confirm_payment_intent_dto)
 
 Confirm Payment Intent
 
-Confirms a payment intent that requires confirmation. This initiates the actual payment processing.
+Confirms a payment intent that requires confirmation and returns 3DS parameters for card authentication.
 
 ### Example
 
@@ -106,7 +106,8 @@ Confirms a payment intent that requires confirmation. This initiates the actual 
 
 ```python
 import cashful
-from cashful.models.payment_intent_response_dto import PaymentIntentResponseDto
+from cashful.models.confirm_payment_intent_dto import ConfirmPaymentIntentDto
+from cashful.models.confirm_payment_intent_response_dto import ConfirmPaymentIntentResponseDto
 from cashful.rest import ApiException
 from pprint import pprint
 
@@ -131,10 +132,11 @@ with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.PaymentIntentsApi(api_client)
     id = 'id_example' # str | The unique identifier of the payment intent
+    confirm_payment_intent_dto = cashful.ConfirmPaymentIntentDto() # ConfirmPaymentIntentDto | 
 
     try:
         # Confirm Payment Intent
-        api_response = api_instance.confirm_payment_intent(id)
+        api_response = api_instance.confirm_payment_intent(id, confirm_payment_intent_dto)
         print("The response of PaymentIntentsApi->confirm_payment_intent:\n")
         pprint(api_response)
     except Exception as e:
@@ -149,10 +151,11 @@ with cashful.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The unique identifier of the payment intent | 
+ **confirm_payment_intent_dto** | [**ConfirmPaymentIntentDto**](ConfirmPaymentIntentDto.md)|  | 
 
 ### Return type
 
-[**PaymentIntentResponseDto**](PaymentIntentResponseDto.md)
+[**ConfirmPaymentIntentResponseDto**](ConfirmPaymentIntentResponseDto.md)
 
 ### Authorization
 
@@ -160,14 +163,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Payment intent confirmed and processing |  -  |
+**200** | Payment intent confirmed and awaiting authentication |  -  |
 **400** | Bad Request - Invalid input |  -  |
 **401** | Unauthorized |  -  |
 **404** | Resource not found |  -  |
@@ -180,7 +183,7 @@ Name | Type | Description  | Notes
 
 Create Payment Intent
 
-Creates a payment intent for off-session charges. Used for subscriptions, recurring billing, or server-to-server payments with saved cards.
+Creates a payment intent for a payment attempt. Used for hosted checkout or direct integrations.
 
 ### Example
 
@@ -260,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_payment_intents**
-> ListPaymentIntentsResponseDto list_payment_intents(merchant_id=merchant_id, limit=limit, offset=offset, status=status)
+> ListPaymentIntentsResponseDto list_payment_intents(status=status, offset=offset, limit=limit, merchant_id=merchant_id)
 
 List Payment Intents
 
@@ -296,14 +299,14 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.PaymentIntentsApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant. If omitted, defaults to the authenticated merchant. (optional)
-    limit = 50 # float | Maximum number of records to return (optional) (default to 50)
-    offset = 0 # float | Number of records to skip (optional) (default to 0)
-    status = 'status_example' # str | Filter by status (optional)
+    status = 'status_example' # str |  (optional)
+    offset = 3.4 # float |  (optional)
+    limit = 3.4 # float |  (optional)
+    merchant_id = 'merchant_id_example' # str |  (optional)
 
     try:
         # List Payment Intents
-        api_response = api_instance.list_payment_intents(merchant_id=merchant_id, limit=limit, offset=offset, status=status)
+        api_response = api_instance.list_payment_intents(status=status, offset=offset, limit=limit, merchant_id=merchant_id)
         print("The response of PaymentIntentsApi->list_payment_intents:\n")
         pprint(api_response)
     except Exception as e:
@@ -317,10 +320,10 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant. If omitted, defaults to the authenticated merchant. | [optional] 
- **limit** | **float**| Maximum number of records to return | [optional] [default to 50]
- **offset** | **float**| Number of records to skip | [optional] [default to 0]
- **status** | **str**| Filter by status | [optional] 
+ **status** | **str**|  | [optional] 
+ **offset** | **float**|  | [optional] 
+ **limit** | **float**|  | [optional] 
+ **merchant_id** | **str**|  | [optional] 
 
 ### Return type
 

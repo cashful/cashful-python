@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **tax_rate** | **float** | Tax rate | [optional] 
 **embed_mode** | **bool** | Embed mode | [optional] 
 **embed_origin** | **str** | Embed origin | [optional] 
+**methods** | **List[str]** | Enabled payment methods | [optional] 
 
 ## Example
 

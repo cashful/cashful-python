@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_checkout_sessions**
-> ListCheckoutSessionsResponseDto list_checkout_sessions(merchant_id, limit=limit, offset=offset, status=status)
+> ListCheckoutSessionsResponseDto list_checkout_sessions(limit=limit, offset=offset)
 
 List Checkout Sessions
 
@@ -128,14 +128,12 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.CheckoutsApi(api_client)
-    merchant_id = 'merchant_id_example' # str | The ID of the merchant to filter checkout sessions
-    limit = 50 # float | Maximum number of records to return (optional)
-    offset = 0 # float | Number of records to skip (optional)
-    status = 'status_example' # str | The status to filter checkout sessions (optional)
+    limit = 3.4 # float | Maximum number of records to return (optional)
+    offset = 3.4 # float | Number of records to skip (optional)
 
     try:
         # List Checkout Sessions
-        api_response = api_instance.list_checkout_sessions(merchant_id, limit=limit, offset=offset, status=status)
+        api_response = api_instance.list_checkout_sessions(limit=limit, offset=offset)
         print("The response of CheckoutsApi->list_checkout_sessions:\n")
         pprint(api_response)
     except Exception as e:
@@ -149,10 +147,8 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| The ID of the merchant to filter checkout sessions | 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
- **status** | **str**| The status to filter checkout sessions | [optional] 
 
 ### Return type
 

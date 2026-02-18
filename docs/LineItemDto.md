@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **quantity** | **float** | The quantity of the product | [optional] 
 **amount** | **float** | The amount for this line item in the smallest currency unit | 
 **currency** | **str** | The three-letter ISO 4217 currency code | 
+**image_id** | **str** | The image identifier for the line item | [optional] 
+**image_url** | **str** | The URL of the image for the line item | [optional] 
 
 ## Example
 
