@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_balance_history**
-> BalanceHistoryResponseDto get_balance_history(merchant_id=merchant_id, limit=limit, offset=offset, start_date=start_date, end_date=end_date, transaction_type=transaction_type)
+> BalanceHistoryResponseDto get_balance_history(limit=limit, offset=offset, filter=filter, sort=sort, order=order, merchant_id=merchant_id, start_date=start_date, end_date=end_date, transaction_type=transaction_type)
 
 List Merchant Balance History
 
@@ -45,16 +45,19 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.BalanceApi(api_client)
+    limit = 50 # float | Maximum number of items to return (optional)
+    offset = 0 # float | Number of items to skip (optional)
+    filter = '{\"ids\":[\"prod_123\",\"prod_456\"]}' # str | JSON string used for dynamic filtering (optional)
+    sort = 'createdAt' # str | Field name to sort by (optional)
+    order = 'DESC' # str | Sort direction (optional)
     merchant_id = 'merchant_id_example' # str | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. (optional)
-    limit = 3.4 # float | Maximum number of records to return (optional)
-    offset = 3.4 # float | Number of records to skip (optional)
     start_date = 'start_date_example' # str | Filter transactions from this date (ISO 8601 format) (optional)
     end_date = 'end_date_example' # str | Filter transactions until this date (ISO 8601 format) (optional)
     transaction_type = 'transaction_type_example' # str | Filter by transaction type (e.g., \"credit\", \"debit\", \"fee\", \"payout\") (optional)
 
     try:
         # List Merchant Balance History
-        api_response = api_instance.get_balance_history(merchant_id=merchant_id, limit=limit, offset=offset, start_date=start_date, end_date=end_date, transaction_type=transaction_type)
+        api_response = api_instance.get_balance_history(limit=limit, offset=offset, filter=filter, sort=sort, order=order, merchant_id=merchant_id, start_date=start_date, end_date=end_date, transaction_type=transaction_type)
         print("The response of BalanceApi->get_balance_history:\n")
         pprint(api_response)
     except Exception as e:
@@ -68,9 +71,12 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **limit** | **float**| Maximum number of items to return | [optional] 
+ **offset** | **float**| Number of items to skip | [optional] 
+ **filter** | **str**| JSON string used for dynamic filtering | [optional] 
+ **sort** | **str**| Field name to sort by | [optional] 
+ **order** | **str**| Sort direction | [optional] 
  **merchant_id** | **str**| The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
- **limit** | **float**| Maximum number of records to return | [optional] 
- **offset** | **float**| Number of records to skip | [optional] 
  **start_date** | **str**| Filter transactions from this date (ISO 8601 format) | [optional] 
  **end_date** | **str**| Filter transactions until this date (ISO 8601 format) | [optional] 
  **transaction_type** | **str**| Filter by transaction type (e.g., \&quot;credit\&quot;, \&quot;debit\&quot;, \&quot;fee\&quot;, \&quot;payout\&quot;) | [optional] 

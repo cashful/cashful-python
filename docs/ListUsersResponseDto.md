@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**users** | **List[object]** | List of users | 
+**users** | [**List[SessionUserDto]**](SessionUserDto.md) | List of users | 
 
 ## Example
 

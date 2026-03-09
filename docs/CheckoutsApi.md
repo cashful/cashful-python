@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_checkout_sessions**
-> ListCheckoutSessionsResponseDto list_checkout_sessions(limit=limit, offset=offset)
+> ListCheckoutSessionsResponseDto list_checkout_sessions(merchant_id, limit=limit, offset=offset, filter=filter, sort=sort, order=order, status=status)
 
 List Checkout Sessions
 
@@ -128,12 +128,17 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.CheckoutsApi(api_client)
-    limit = 3.4 # float | Maximum number of records to return (optional)
-    offset = 3.4 # float | Number of records to skip (optional)
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant to filter checkout sessions
+    limit = 50 # float | Maximum number of items to return (optional)
+    offset = 0 # float | Number of items to skip (optional)
+    filter = '{\"ids\":[\"prod_123\",\"prod_456\"]}' # str | JSON string used for dynamic filtering (optional)
+    sort = 'createdAt' # str | Field name to sort by (optional)
+    order = 'DESC' # str | Sort direction (optional)
+    status = 'status_example' # str | The status to filter checkout sessions (optional)
 
     try:
         # List Checkout Sessions
-        api_response = api_instance.list_checkout_sessions(limit=limit, offset=offset)
+        api_response = api_instance.list_checkout_sessions(merchant_id, limit=limit, offset=offset, filter=filter, sort=sort, order=order, status=status)
         print("The response of CheckoutsApi->list_checkout_sessions:\n")
         pprint(api_response)
     except Exception as e:
@@ -147,8 +152,13 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **float**| Maximum number of records to return | [optional] 
- **offset** | **float**| Number of records to skip | [optional] 
+ **merchant_id** | **str**| The ID of the merchant to filter checkout sessions | 
+ **limit** | **float**| Maximum number of items to return | [optional] 
+ **offset** | **float**| Number of items to skip | [optional] 
+ **filter** | **str**| JSON string used for dynamic filtering | [optional] 
+ **sort** | **str**| Field name to sort by | [optional] 
+ **order** | **str**| Sort direction | [optional] 
+ **status** | **str**| The status to filter checkout sessions | [optional] 
 
 ### Return type
 
@@ -169,8 +179,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successfully retrieved checkout sessions |  -  |
 **400** | Bad Request - Invalid input |  -  |
-**401** | Unauthorized |  -  |
-**404** | Resource not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

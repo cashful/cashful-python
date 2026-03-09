@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **payment_intent_id** | **str** |  | [optional] 
 **customer_id** | **str** |  | [optional] 
 **session_url** | **str** |  | 
-**success_url** | **str** |  | 
-**cancel_url** | **str** |  | 
+**success_url** | **str** |  | [optional] 
+**cancel_url** | **str** |  | [optional] 
 **line_items** | [**List[LineItemDto]**](LineItemDto.md) |  | [optional] 
 **total_amount** | **float** |  | [optional] 
 **currency** | **str** |  | 

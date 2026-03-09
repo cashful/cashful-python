@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | [**SessionUserDto**](SessionUserDto.md) | User object | 
 **token** | **str** | Session token | 
-**redirect** | **float** | Whether to redirect | 
+**redirect** | **bool** | Whether to redirect | 
 **url** | **str** | Redirect URL | [optional] 
 
 ## Example

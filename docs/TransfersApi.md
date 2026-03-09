@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_transfers**
-> ListTransfersResponseDto list_transfers(limit=limit, offset=offset, merchant_id=merchant_id)
+> ListTransfersResponseDto list_transfers(limit=limit, offset=offset, filter=filter, sort=sort, order=order, merchant_id=merchant_id)
 
 List Transfers
 
@@ -131,11 +131,14 @@ with cashful.ApiClient(configuration) as api_client:
     api_instance = cashful.TransfersApi(api_client)
     limit = 50 # float | Maximum number of items to return (optional)
     offset = 0 # float | Number of items to skip (optional)
+    filter = '{\"ids\":[\"prod_123\",\"prod_456\"]}' # str | JSON string used for dynamic filtering (optional)
+    sort = 'createdAt' # str | Field name to sort by (optional)
+    order = 'DESC' # str | Sort direction (optional)
     merchant_id = 'merchant_id_example' # str | Filter by merchant ID. If omitted, defaults to the authenticated merchant. (optional)
 
     try:
         # List Transfers
-        api_response = api_instance.list_transfers(limit=limit, offset=offset, merchant_id=merchant_id)
+        api_response = api_instance.list_transfers(limit=limit, offset=offset, filter=filter, sort=sort, order=order, merchant_id=merchant_id)
         print("The response of TransfersApi->list_transfers:\n")
         pprint(api_response)
     except Exception as e:
@@ -151,6 +154,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **float**| Maximum number of items to return | [optional] 
  **offset** | **float**| Number of items to skip | [optional] 
+ **filter** | **str**| JSON string used for dynamic filtering | [optional] 
+ **sort** | **str**| Field name to sort by | [optional] 
+ **order** | **str**| Sort direction | [optional] 
  **merchant_id** | **str**| Filter by merchant ID. If omitted, defaults to the authenticated merchant. | [optional] 
 
 ### Return type

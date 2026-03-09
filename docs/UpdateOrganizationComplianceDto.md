@@ -41,9 +41,6 @@ Name | Type | Description | Notes
 **terms_accepted** | **bool** |  | [optional] 
 **accepted_at** | **datetime** |  | [optional] 
 **current_step** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
-**is_completed** | **bool** |  | [optional] 
-**completion_score** | **float** |  | [optional] 
 
 ## Example
 

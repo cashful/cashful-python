@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**iveri_params** | [**IveriParamsDto**](IveriParamsDto.md) | Parameters to POST to iVeri 3DS endpoint | 
-**i_veri3ds_endpoint** | **str** | iVeri 3DS endpoint URL to POST the parameters to | 
+**iveri_params** | [**IveriParamsDto**](IveriParamsDto.md) | Parameters to POST to iVeri 3DS endpoint (only in live mode) | [optional] 
+**i_veri3ds_endpoint** | **str** | iVeri 3DS endpoint URL to POST the parameters to (only in live mode) | [optional] 
+**sandbox_mode** | **bool** | Whether sandbox mode is active | [optional] 
+**status** | **str** | Payment status (only in sandbox mode) | [optional] 
+**payment_intent_id** | **str** | Payment intent ID | [optional] 
+**transaction_id** | **str** | Transaction ID (only in sandbox mode on success) | [optional] 
+**auth_code** | **str** | Authorization code (only in sandbox mode on success) | [optional] 
+**amount** | **float** | Payment amount in smallest currency unit | [optional] 
+**currency** | **str** | Currency code | [optional] 
+**reason** | **str** | Reason for failure (only in sandbox mode on failure) | [optional] 
 
 ## Example
 

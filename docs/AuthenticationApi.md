@@ -3169,7 +3169,7 @@ with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.AuthenticationApi(api_client)
     token = 'token_example' # str | 
-    callback_url = 'https://example.com/reset-password' # str | The URL to redirect user to reset their password
+    callback_url = 'https://www.cashful.africa/reset-password' # str | The URL to redirect user to reset their password
 
     try:
         # Reset Password Callback
@@ -4617,7 +4617,7 @@ with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.AuthenticationApi(api_client)
     token = 'verify_token_12345' # str | The token to verify email
-    callback_url = 'https://example.com/callback' # str | The URL to redirect to after email verification (optional)
+    callback_url = 'https://www.cashful.africa/callback' # str | The URL to redirect to after email verification (optional)
 
     try:
         # Verify Email

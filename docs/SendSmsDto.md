@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **to** | **object** | Recipient phone number(s) in international format | 
 **message** | **str** | SMS message content | 
 **var_from** | **str** | Sender name or number | [optional] 
+**merchant_id** | **str** | Merchant ID for context and auditing | [optional] 
 
 ## Example
 

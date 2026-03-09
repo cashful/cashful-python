@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** | Service health status | 
+**environment** | **str** | Current environment mode | 
 **timestamp** | **str** | Current server timestamp in ISO format | 
 
 ## Example

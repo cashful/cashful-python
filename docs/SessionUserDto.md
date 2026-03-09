@@ -9,6 +9,16 @@ Name | Type | Description | Notes
 **email** | **str** |  | 
 **email_verified** | **bool** |  | 
 **name** | **str** |  | 
+**image** | **str** |  | [optional] 
+**role** | **str** |  | [optional] 
+**banned** | **bool** |  | [optional] 
+**ban_reason** | **str** |  | [optional] 
+**ban_expires** | **datetime** |  | [optional] 
+**is_anonymous** | **bool** |  | [optional] 
+**username** | **str** |  | [optional] 
+**display_username** | **str** |  | [optional] 
+**phone_number** | **str** |  | [optional] 
+**phone_number_verified** | **bool** |  | [optional] 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 

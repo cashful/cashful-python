@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **var_from** | **str** | Sender email address | [optional] 
 **cc** | **object** | CC email address(es) | [optional] 
 **bcc** | **object** | BCC email address(es) | [optional] 
+**merchant_id** | **str** | Merchant ID for context and auditing | [optional] 
 
 ## Example
 

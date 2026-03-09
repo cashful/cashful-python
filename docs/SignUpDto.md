@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **email** | **str** | The email address of the user | 
 **password** | **str** | The password for the user account | 
 **image** | **str** | Optional URL to the user&#39;s profile image | [optional] 
-**callback_url** | **str** | Optional callback URL after successful sign-up | [optional] 
+**callback_url** | **str** | Optional callback URL after successful sign-up | [optional] [default to 'https://api.cashful.africa/auth/callback']
 **remember_me** | **bool** | Optional flag to indicate if the user should be remembered | [optional] 
 
 ## Example

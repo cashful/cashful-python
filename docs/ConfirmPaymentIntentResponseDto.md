@@ -6,8 +6,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payment_intent** | [**PaymentIntentResponseDto**](PaymentIntentResponseDto.md) |  | 
-**iveri_params** | **object** |  | 
-**i_veri3ds_endpoint** | **str** |  | 
+**iveri_params** | **object** |  | [optional] 
+**i_veri3ds_endpoint** | **str** |  | [optional] 
+**sandbox_mode** | **bool** |  | [optional] 
+**status** | **str** |  | [optional] 
+**transaction_id** | **str** |  | [optional] 
+**auth_code** | **str** |  | [optional] 
+**amount** | **float** |  | [optional] 
+**currency** | **str** |  | [optional] 
+**reason** | **str** |  | [optional] 
 
 ## Example
 

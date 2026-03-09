@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounts** | **List[object]** | List of linked social accounts | 
+**accounts** | [**List[LinkedAccountDto]**](LinkedAccountDto.md) | List of linked social accounts | 
 
 ## Example
 

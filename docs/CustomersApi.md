@@ -5,12 +5,14 @@ All URIs are relative to *https://api.cashful.africa*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_customer**](CustomersApi.md#create_customer) | **POST** /api/canary/customers | Create Customer
+[**delete_customers_bulk**](CustomersApi.md#delete_customers_bulk) | **DELETE** /api/canary/customers/bulk | Bulk Delete Customers
 [**get_customer_balance**](CustomersApi.md#get_customer_balance) | **GET** /api/canary/customers/{id}/balance | Get Customer&#39;s Cash Balance
 [**list_customer_payment_methods**](CustomersApi.md#list_customer_payment_methods) | **GET** /api/canary/customers/{id}/payment-methods | List Customer&#39;s Payment Methods
 [**list_customer_transactions**](CustomersApi.md#list_customer_transactions) | **GET** /api/canary/customers/{id}/transactions | List Customer&#39;s Cash Transactions
 [**list_customers**](CustomersApi.md#list_customers) | **GET** /api/canary/customers | List Customers
 [**retrieve_customer**](CustomersApi.md#retrieve_customer) | **GET** /api/canary/customers/{id} | Retrieve Customer
 [**update_customer**](CustomersApi.md#update_customer) | **PATCH** /api/canary/customers/{id} | Update Customer
+[**update_customers_bulk**](CustomersApi.md#update_customers_bulk) | **PATCH** /api/canary/customers/bulk | Bulk Update Customers
 
 
 # **create_customer**
@@ -92,6 +94,88 @@ Name | Type | Description  | Notes
 **400** | Bad Request - Invalid input |  -  |
 **401** | Unauthorized |  -  |
 **409** | Customer with this email already exists |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_customers_bulk**
+> object delete_customers_bulk(bulk_ids_dto)
+
+Bulk Delete Customers
+
+Deletes multiple customers by ID.
+
+### Example
+
+* Bearer (JWT) Authentication (bearer):
+
+```python
+import cashful
+from cashful.models.bulk_ids_dto import BulkIdsDto
+from cashful.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.cashful.africa
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cashful.Configuration(
+    host = "https://api.cashful.africa"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearer
+configuration = cashful.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cashful.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cashful.CustomersApi(api_client)
+    bulk_ids_dto = cashful.BulkIdsDto() # BulkIdsDto | 
+
+    try:
+        # Bulk Delete Customers
+        api_response = api_instance.delete_customers_bulk(bulk_ids_dto)
+        print("The response of CustomersApi->delete_customers_bulk:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CustomersApi->delete_customers_bulk: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bulk_ids_dto** | [**BulkIdsDto**](BulkIdsDto.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Customers deleted successfully |  -  |
+**400** | Bad Request - Invalid input |  -  |
+**401** | Unauthorized |  -  |
+**404** | Resource not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -348,7 +432,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_customers**
-> ListCustomersResponseDto list_customers(merchant_id=merchant_id, limit=limit, offset=offset, email=email, search=search)
+> ListCustomersResponseDto list_customers(merchant_id=merchant_id, limit=limit, offset=offset, filter=filter, sort=sort, order=order, email=email)
 
 List Customers
 
@@ -387,12 +471,14 @@ with cashful.ApiClient(configuration) as api_client:
     merchant_id = 'merchant_id_example' # str | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. (optional)
     limit = 3.4 # float | Maximum number of records to return (optional)
     offset = 3.4 # float | Number of records to skip (optional)
+    filter = 'filter_example' # str | JSON string used for dynamic filtering (optional)
+    sort = 'sort_example' # str |  (optional)
+    order = 'DESC' # str |  (optional)
     email = 'email_example' # str | Filter by email address (optional)
-    search = 'search_example' # str | Search across customer fields (optional)
 
     try:
         # List Customers
-        api_response = api_instance.list_customers(merchant_id=merchant_id, limit=limit, offset=offset, email=email, search=search)
+        api_response = api_instance.list_customers(merchant_id=merchant_id, limit=limit, offset=offset, filter=filter, sort=sort, order=order, email=email)
         print("The response of CustomersApi->list_customers:\n")
         pprint(api_response)
     except Exception as e:
@@ -409,8 +495,10 @@ Name | Type | Description  | Notes
  **merchant_id** | **str**| The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
+ **filter** | **str**| JSON string used for dynamic filtering | [optional] 
+ **sort** | **str**|  | [optional] 
+ **order** | **str**|  | [optional] 
  **email** | **str**| Filter by email address | [optional] 
- **search** | **str**| Search across customer fields | [optional] 
 
 ### Return type
 
@@ -600,6 +688,88 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **404** | Resource not found |  -  |
 **409** | Email already in use by another customer |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_customers_bulk**
+> object update_customers_bulk(bulk_update_customers_input_dto)
+
+Bulk Update Customers
+
+Updates multiple customers using a shared patch.
+
+### Example
+
+* Bearer (JWT) Authentication (bearer):
+
+```python
+import cashful
+from cashful.models.bulk_update_customers_input_dto import BulkUpdateCustomersInputDto
+from cashful.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.cashful.africa
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cashful.Configuration(
+    host = "https://api.cashful.africa"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearer
+configuration = cashful.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cashful.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cashful.CustomersApi(api_client)
+    bulk_update_customers_input_dto = cashful.BulkUpdateCustomersInputDto() # BulkUpdateCustomersInputDto | 
+
+    try:
+        # Bulk Update Customers
+        api_response = api_instance.update_customers_bulk(bulk_update_customers_input_dto)
+        print("The response of CustomersApi->update_customers_bulk:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CustomersApi->update_customers_bulk: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bulk_update_customers_input_dto** | [**BulkUpdateCustomersInputDto**](BulkUpdateCustomersInputDto.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Customers updated successfully |  -  |
+**400** | Bad Request - Invalid input |  -  |
+**401** | Unauthorized |  -  |
+**404** | Resource not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

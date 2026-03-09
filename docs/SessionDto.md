@@ -7,6 +7,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
 **user_id** | **str** |  | 
+**token** | **str** |  | 
+**created_at** | **datetime** |  | 
+**updated_at** | **datetime** |  | 
+**impersonated_by** | **str** |  | [optional] 
+**active_organization_id** | **str** |  | [optional] 
 **expires_at** | **datetime** |  | 
 **ip_address** | **str** |  | [optional] 
 **user_agent** | **str** |  | [optional] 

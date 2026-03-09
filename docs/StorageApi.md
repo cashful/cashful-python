@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_files**
-> ListFilesResponseDto list_files(limit=limit, offset=offset, tag=tag, status=status, related_entity_id=related_entity_id, related_entity_type=related_entity_type)
+> ListFilesResponseDto list_files(limit=limit, offset=offset, filter=filter, sort=sort, order=order, tag=tag, status=status, related_entity_id=related_entity_id, related_entity_type=related_entity_type)
 
 List files
 
@@ -365,8 +365,11 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.StorageApi(api_client)
-    limit = 50 # float | Maximum number of records to return (optional)
-    offset = 0 # float | Number of records to skip (optional)
+    limit = 50 # float | Maximum number of items to return (optional)
+    offset = 0 # float | Number of items to skip (optional)
+    filter = '{\"ids\":[\"prod_123\",\"prod_456\"]}' # str | JSON string used for dynamic filtering (optional)
+    sort = 'createdAt' # str | Field name to sort by (optional)
+    order = 'DESC' # str | Sort direction (optional)
     tag = 'tag_example' # str | Filter by tag (optional)
     status = 'status_example' # str |  (optional)
     related_entity_id = 'related_entity_id_example' # str |  (optional)
@@ -374,7 +377,7 @@ with cashful.ApiClient(configuration) as api_client:
 
     try:
         # List files
-        api_response = api_instance.list_files(limit=limit, offset=offset, tag=tag, status=status, related_entity_id=related_entity_id, related_entity_type=related_entity_type)
+        api_response = api_instance.list_files(limit=limit, offset=offset, filter=filter, sort=sort, order=order, tag=tag, status=status, related_entity_id=related_entity_id, related_entity_type=related_entity_type)
         print("The response of StorageApi->list_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -388,8 +391,11 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **float**| Maximum number of records to return | [optional] 
- **offset** | **float**| Number of records to skip | [optional] 
+ **limit** | **float**| Maximum number of items to return | [optional] 
+ **offset** | **float**| Number of items to skip | [optional] 
+ **filter** | **str**| JSON string used for dynamic filtering | [optional] 
+ **sort** | **str**| Field name to sort by | [optional] 
+ **order** | **str**| Sort direction | [optional] 
  **tag** | **str**| Filter by tag | [optional] 
  **status** | **str**|  | [optional] 
  **related_entity_id** | **str**|  | [optional] 

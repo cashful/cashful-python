@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_payment_methods**
-> ListPaymentMethodsResponseDto list_payment_methods(limit=limit, offset=offset, merchant_id=merchant_id, customer_id=customer_id)
+> ListPaymentMethodsResponseDto list_payment_methods(limit=limit, offset=offset, filter=filter, sort=sort, order=order, merchant_id=merchant_id, customer_id=customer_id)
 
 List Payment Methods
 
@@ -126,14 +126,17 @@ configuration = cashful.Configuration(
 with cashful.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cashful.PaymentMethodsApi(api_client)
-    limit = 50 # float | Maximum number of records to return (optional)
-    offset = 0 # float | Number of records to skip (optional)
-    merchant_id = 'merchant_id_example' # str | The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization. (optional)
-    customer_id = 'customer_id_example' # str | The unique identifier of the customer (optional)
+    limit = 50 # float | Maximum number of items to return (optional)
+    offset = 0 # float | Number of items to skip (optional)
+    filter = '{\"ids\":[\"prod_123\",\"prod_456\"]}' # str | JSON string used for dynamic filtering (optional)
+    sort = 'createdAt' # str | Field name to sort by (optional)
+    order = 'DESC' # str | Sort direction (optional)
+    merchant_id = 'merchant_id_example' # str | The ID of the merchant. If omitted, defaults to the authenticated merchant. (optional)
+    customer_id = 'customer_id_example' # str | Customer ID to filter by (optional)
 
     try:
         # List Payment Methods
-        api_response = api_instance.list_payment_methods(limit=limit, offset=offset, merchant_id=merchant_id, customer_id=customer_id)
+        api_response = api_instance.list_payment_methods(limit=limit, offset=offset, filter=filter, sort=sort, order=order, merchant_id=merchant_id, customer_id=customer_id)
         print("The response of PaymentMethodsApi->list_payment_methods:\n")
         pprint(api_response)
     except Exception as e:
@@ -147,10 +150,13 @@ with cashful.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **float**| Maximum number of records to return | [optional] 
- **offset** | **float**| Number of records to skip | [optional] 
- **merchant_id** | **str**| The unique identifier of the merchant. If not provided, defaults to the authenticated user&#39;s active organization. | [optional] 
- **customer_id** | **str**| The unique identifier of the customer | [optional] 
+ **limit** | **float**| Maximum number of items to return | [optional] 
+ **offset** | **float**| Number of items to skip | [optional] 
+ **filter** | **str**| JSON string used for dynamic filtering | [optional] 
+ **sort** | **str**| Field name to sort by | [optional] 
+ **order** | **str**| Sort direction | [optional] 
+ **merchant_id** | **str**| The ID of the merchant. If omitted, defaults to the authenticated merchant. | [optional] 
+ **customer_id** | **str**| Customer ID to filter by | [optional] 
 
 ### Return type
 

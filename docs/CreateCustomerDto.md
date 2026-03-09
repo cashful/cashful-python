@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant_id** | **str** | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
-**phone_number** | **str** | The phone number of the customer | 
+**phone_number** | **str** | The phone number of the customer | [optional] 
 **email** | **str** | The email address of the customer | [optional] 
 **name** | **str** | The full name of the customer | [optional] 
 **metadata** | **Dict[str, object]** | Optional custom metadata | 

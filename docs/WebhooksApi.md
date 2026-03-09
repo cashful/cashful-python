@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_webhook_endpoints**
-> ListWebhookEndpointsResponseDto list_webhook_endpoints(merchant_id=merchant_id, limit=limit, offset=offset)
+> ListWebhookEndpointsResponseDto list_webhook_endpoints(merchant_id=merchant_id, limit=limit, offset=offset, filter=filter, sort=sort, order=order)
 
 List Webhook Endpoints
 
@@ -211,10 +211,13 @@ with cashful.ApiClient(configuration) as api_client:
     merchant_id = 'merchant_id_example' # str | The ID of the merchant whose webhooks are being requested. If omitted, defaults to the authenticated merchant. (optional)
     limit = 3.4 # float | Maximum number of records to return (optional)
     offset = 3.4 # float | Number of records to skip (optional)
+    filter = 'filter_example' # str | JSON string used for dynamic filtering (optional)
+    sort = 'sort_example' # str | Field name to sort by (optional)
+    order = 'order_example' # str | Sort direction (ASC or DESC) (optional)
 
     try:
         # List Webhook Endpoints
-        api_response = api_instance.list_webhook_endpoints(merchant_id=merchant_id, limit=limit, offset=offset)
+        api_response = api_instance.list_webhook_endpoints(merchant_id=merchant_id, limit=limit, offset=offset, filter=filter, sort=sort, order=order)
         print("The response of WebhooksApi->list_webhook_endpoints:\n")
         pprint(api_response)
     except Exception as e:
@@ -231,6 +234,9 @@ Name | Type | Description  | Notes
  **merchant_id** | **str**| The ID of the merchant whose webhooks are being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **float**| Maximum number of records to return | [optional] 
  **offset** | **float**| Number of records to skip | [optional] 
+ **filter** | **str**| JSON string used for dynamic filtering | [optional] 
+ **sort** | **str**| Field name to sort by | [optional] 
+ **order** | **str**| Sort direction (ASC or DESC) | [optional] 
 
 ### Return type
 

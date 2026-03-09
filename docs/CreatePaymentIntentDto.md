@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **payment_method_id** | **str** | The unique identifier of the payment method. Optional if payment method will be collected later. | [optional] 
 **amount** | **float** | The amount to charge in the smallest currency unit (cents) | 
 **currency** | **str** | The three-letter ISO 4217 currency code | 
-**mode** | **str** | The mode of the payment intent | [optional] [default to 'payment']
+**mode** | **str** | The mode of the payment intent | [optional] 
 **description** | **str** | Optional description for the payment | [optional] 
 **metadata** | **Dict[str, object]** | Optional custom metadata | [optional] 
 **idempotency_key** | **str** | A unique key to prevent duplicate charges. If not provided, one will be generated. | [optional] 
